@@ -1,48 +1,147 @@
-<h1 align="center">Easy Vue</h1>
+#建模配置字段
+> config
+```js
+[
+    {
+        "tileName": "应用汇",
+        "tag": "FsApplicationSink",
+        "config": []
+    },
+    {
+        "tileName": "应用代办",
+        "tag": "FsApplicationTodo",
+        "config": [
+            {
+                "optionType": "selectApplication",
+                "optionTitle": "应用选择",
+                "requestUrl": "",
+                "selectedList": []
+            }
+        ]
+    },
+    {
+        "tileName": "表格查询",
+        "tag": "FsTableQuery",
+        "config": [
+            {
+                "optionType": "dropMenu",
+                "optionTitle": "查询选择",
+                "requestUrl": "",
+                "selected": {
+                    "id": "",
+                    "name": ""
+                }
+            },
+            {
+                "optionType": "text",
+                "optionTitle": "显示条数",
+                "value": "10",
+                "placeholder": ""
+            }
+        ]
+    },
+    {
+        "tileName": "交叉表查询",
+        "tag": "FsCrossTableQuery",
+        "config": [
+            {
+                "optionType": "dropMenu",
+                "optionTitle": "查询选择",
+                "requestUrl": "",
+                "selected": {
+                    "id": "",
+                    "name": ""
+                }
+            },
+            {
+                "optionType": "text",
+                "optionTitle": "显示条数",
+                "value": "10",
+                "placeholder": ""
+            }
+        ]
+    },
+    {
+        "tileName": "智象报表",
+        "tag": "FsIntelligenceReport",
+        "config": [
+            {
+                "optionType": "dropMenu",
+                "optionTitle": "查询选择",
+                "requestUrl": "",
+                "selected": {
+                    "id": "",
+                    "name": ""
+                }
+            }
+        ]
+    }
+]
+```
+----------------------------------
+###参数说明
+```js
+    //主体配置
+    {
+        "tileName": "",
+        "tag": "",
+        "config": []
+    }
+```
+```sh
+基本主体参数:
+    tileName -- 磁贴名称
+    tag -- 磁贴唯一id
+    config -- 磁贴属性配置项目
+```
+```js
+    //config
+    {
+        "tileName": "",
+        "tag": "",
+        "config": [{
+                "optionType": "selectApplication",
+                "optionTitle": "",
+                "requestUrl": "",
+                "selectedList": []
+            },
+            {
+                "optionType": "dropMenu",
+                "optionTitle": "",
+                "requestUrl": "",
+                "selected": {
+                    "id": "",
+                    "name": ""
+                }
+            },
+            {
+                "optionType": "text",
+                "optionTitle": "",
+                "value": "",
+                "placeholder": ""
+            }]
+    }
+```
+```sh
+ config目前支持的三种配置--选择选项类，下拉选择类，文本设置类
+ 参数配置依次为:
+    1.选择选项类:
+        optionType:磁贴属性配置类型 -- selectApplication(选择项,树结构)
+        optionTitle:磁贴配置项名称
+        requestUrl:选项数据接口(接口数据树结构)
+        selectedList:选择项返回数组
+    2.下拉选择类:
+        optionType:磁贴属性配置类型 -- dropMenu
+        optionTitle:磁贴配置项名称
+        requestUrl:下拉选项数据接口
+        selected:当前选中条目的id，name值
+    3.文本设置类:
+        optionType:磁贴属性配置类型 --text(输入框类型)
+        optionTitle:磁贴配置项名称
+        value:输入值
+        placeholder:输入框提示
 
-<p align="center">
-<a href="http://vue.tigerb.cn/#/"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build Status"></a>
-<a href="https://github.com/TIGERB/easy-vue/releases"><img src="https://img.shields.io/badge/version-0.6.0-lightgrey.svg" alt="Version"></a>
-<a href="https://github.com/TIGERB/easy-vue/releases"><img src="https://img.shields.io/badge/download-34.8kb-orange.svg" alt="Downloads"></a>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-</p>
-
-## Learn Vue Easy
-
-> a easy example using the vue to implement easy web
+    以上配置项，可重复添加.
+```
 
 
-## Latest Version 0.6.0(2016/12/08)
-- 0.6.0 [2016/12/08]
-  + fix not require fastclick from node_modules
-  + rename view
-  + add component alert, list, button, text
-  + add view detail
-  + update component barBottom, barTop
-  + update view list&option by use component list&button
-- 0.5.1 [2016/11/25]
-  + do not rely on bower
-- 0.5.0 [2016/11/22]
-  + use vue 2.0
-  + use vuex 2.0
-- 0.3.0 [2016/09/13]
-  + change UI for easy-vue
-  + use vue-progressbar
-  + add loading animation component in src/components
-  + optimize card.vue
-- 0.2.0
-  + implements page change
-  + optimize UI
-
-> [latest version download](https://github.com/TIGERB/easy-vue/releases/tag/v0.6.0)
-
-## Demo
-
-> <http://tigerb.github.io/easy-vue>
-
-## How To Use ?
-1. npm install
-2. build:
-  - develop environment: `DOMAIN=http://yourdomain npm run test`
-  - production environment: `DOMAIN=http://yourdomain npm run build`
-3. php environment to use server.php simulate api
