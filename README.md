@@ -1,6 +1,6 @@
 #建模配置字段
 > config
-```js
+```
 [
     {
         "tileName": "应用汇",
@@ -79,9 +79,10 @@
 ]
 ```
 ----------------------------------
+
 ###参数说明
 ```js
-    //主体配置
+    //一个磁贴基本主体配置
     {
         "tileName": "",
         "tag": "",
@@ -94,8 +95,10 @@
     tag -- 磁贴唯一id
     config -- 磁贴属性配置项目
 ```
+------------------------------
+
 ```js
-    //config
+    //磁贴主体中的config磁贴属性配置项目
     {
         "tileName": "",
         "tag": "",
@@ -122,26 +125,29 @@
             }]
     }
 ```
+
 ```sh
  config目前支持的三种配置--选择选项类，下拉选择类，文本设置类
  参数配置依次为:
     1.选择选项类:
-        optionType:磁贴属性配置类型 -- selectApplication(选择项,树结构)
-        optionTitle:磁贴配置项名称
-        requestUrl:选项数据接口(接口数据树结构)
-        selectedList:选择项返回数组
+        - optionType - 磁贴属性配置类型 -- selectApplication(选择项,树结构)
+        - optionTitle - 磁贴配置项名称
+        - requestUrl - 选项数据接口(接口数据树结构)
+        - selectedList - 选择项返回数组
     2.下拉选择类:
-        optionType:磁贴属性配置类型 -- dropMenu
-        optionTitle:磁贴配置项名称
-        requestUrl:下拉选项数据接口
-        selected:当前选中条目的id，name值
+        optionType - 磁贴属性配置类型 -- dropMenu
+        optionTitle - 磁贴配置项名称
+        requestUrl - 下拉选项数据接口
+        selected - 当前选中条目的id，name值
     3.文本设置类:
-        optionType:磁贴属性配置类型 --text(输入框类型)
-        optionTitle:磁贴配置项名称
-        value:输入值
-        placeholder:输入框提示
+        optionType - 磁贴属性配置类型 --text(输入框类型)
+        optionTitle - 磁贴配置项名称
+        value - 输入值
+        placeholder - 输入框提示
 
     以上配置项，可重复添加.
 ```
+
+
 
 
